@@ -1,0 +1,91 @@
+let cartItems = []
+
+veggies = [
+    {imageUrl: 'https://static.toiimg.com/photo/65966801.cms', rating: '4.5', name: 'Buffalo Milk', price: '80/ltr' },
+    {imageUrl: 'https://tamilmilk.com/cdn/shop/files/freshmilk_4c782fa0-0ba2-4eab-81c3-21707b7b9819.jpg?v=1724966928&width=1024', rating: '4.7', name: 'Cow Milk', price: '65/ltr' },
+    {imageUrl: 'https://foodallergycanada.ca/wp-content/uploads/egg-2.jpg', rating: '4.5', name: 'Eggs', price: '5/peace' },
+    {imageUrl: 'https://pheebs.in/shop-admin/images/products/JIR4Em8kHpXtv2d6Fs.jpg', rating: '4.8', name: 'Country Eggs', price: '10/peace' },
+
+    
+]
+
+veggiesContainer = document.getElementById('veggiesContainer')
+if (veggiesContainer!== null)
+{
+    veggiesContainer.innerHTML = veggies.map(veggie => {
+    return `
+      <div class="card">
+        <img src="${veggie.imageUrl}" alt="${veggie.name}"/>
+        <div class="rating">⭐ ${veggie.rating}</div>
+        <div class="price">₹${veggie.price}</div>
+        <b>${veggie.name}</b>
+        <button class="cart-btn" onclick="addItem('${veggie.imageUrl}', '${veggie.rating}', '${veggie.price}', '${veggie.name}')">Add to Cart</button>
+      </div>
+    `;
+  }).join('');
+}
+
+const addItem = (imageUrl, rating, price, name) => {
+  const item = {imageUrl, rating, price, name, quantity: 1}
+  cartItems.push(item)
+  alert('Item added successfully')
+  localStorage.setItem('cartItems', JSON.stringify(cartItems))
+  console.log(cartItems)
+}
+
+cartContainer = document.getElementById('cartContainer')
+cartItems = JSON.parse(localStorage.getItem('cartItems'))
+if(cartContainer !== null){
+    cartContainer.innerHTML = cartItems.map((item, index) => {
+        return `
+          <div class="cart-item">
+              <img src="${item.imageUrl}" alt=${item.name}">
+              <div class="item-info">
+                  <p>${item.name}</p>
+                  <span style="display: flex; gap: 5px"><p>Price: </p><p id='${index}-price'>${item.price}</p></span>
+              </div>
+              <div class="quantity">
+                  <button onclick="updateQuantity('-', '${index}', '${item.price}')">-</button>
+                  <span id='${index}-quan'>${item.quantity}</span>
+                  <button onclick="updateQuantity('+', '${index}', '${item.price}')">+</button>
+              </div>
+          </div>
+        `
+      }).join('');
+}
+
+const updateQuantity= (sign, id, amount) => {
+  quantity = document.getElementById(`${id}-quan`)
+  sign === '-' ? quantity.innerText = parseInt(quantity.innerText)-1 < 0 ? 0 : parseInt(quantity.innerText) -1
+  : quantity.innerText = parseInt(quantity.innerText)+1
+  if(parseInt(quantity.innerText) === 0){
+    cartItems.splice(id, 1)
+    localStorage.setItem('cartItems', JSON.stringify(cartItems))
+    updateTotal()
+    window.location.reload()
+    alert('item removed')
+    return
+  }
+  localStorage.setItem('cartItems', JSON.stringify(cartItems))
+  window.location.reload()
+  price = document.getElementById(`${id}-price`)
+  price.innerText = parseInt(parseInt(amount)*parseInt(quantity.innerText))
+  cartItems[id].price = price.innerText
+  updateTotal()
+}
+
+const total = document.getElementById('total')
+let net = 0
+cartItems.map((item) => {
+  net += parseInt(item.price)
+})
+total.innerText = net
+
+const updateTotal = () => {
+    const total = document.getElementById('total')
+    let net = 0
+    cartItems.map((item) => {
+      net += parseInt(item.price)
+    })
+    total.innerText = net
+}

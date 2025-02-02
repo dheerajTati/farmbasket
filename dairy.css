@@ -1,0 +1,105 @@
+body {
+    background-color: #a4d3a4;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    color: #333;
+  }
+  
+  header {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  
+  header nav {
+    display: flex;
+    gap: 15px;
+  }
+  
+  .logo{
+    padding-right: 52%;
+    font-size: 1.5rem;
+  }
+  header nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    padding-top: 1%;
+  }
+
+  #veggiesContainer {
+      max-width: 1400px;
+      margin: auto;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 40px;
+  }
+
+  .card {
+    background: white;
+    padding: 10px;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    text-align: center;
+    position: relative;
+    width: 95%;
+  }
+  .card img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 12px;
+  }
+  .price {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    background: rgba(0, 128, 0, 0.8);
+    color: white;
+    padding: 5px 10px;
+    border-radius: 6px;
+    font-weight: bold;
+  }
+  .rating {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background:  rgb(10, 156, 144);
+    padding: 5px 10px;
+
+    border-radius: 6px;
+    font-weight: bold;
+  }
+  .cart-btn {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    background: orange;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: bold;
+  }
+  .head{
+    padding: 10px 20px;
+    margin-bottom: 20px;
+  }
+  .footer {
+    margin-top:200px;
+    background-color: #333;
+    color: white;
+    padding: 20px;
+    text-align: baseline;
+  }
+
+  .end{
+    text-align: center;
+  }
+  

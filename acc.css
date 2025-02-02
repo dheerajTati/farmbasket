@@ -1,0 +1,46 @@
+header {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  header nav {
+    display: flex;
+    gap: 15px;
+  }
+  
+  .logo{
+    font-size: 1.5rem;
+  }
+  
+  h1{
+    text-align: center;
+    color: rgb(0, 255, 34);
+}
+
+.main{
+    background-color: #a4d3a4;
+    padding: 10px 10px 10px 10px;
+    border-radius: 10px;
+    margin-top: 5%;
+    margin-left:25%;
+    margin-right: 25%;
+    box-shadow:black;
+    
+}
+
+button{
+    margin-left:35%;
+    padding: 1% 10% 1% 10%;
+    color:rgb(0, 0, 0);
+    background-color: rgba(255,255,255,0.5);
+    border-radius: 5px;
+    cursor: pointer;
+}
+button:hover{
+    background-color: rgb(0, 255, 13);
+    color: rgb(0, 0, 0);
+}
