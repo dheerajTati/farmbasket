@@ -3,22 +3,87 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="C:\Users\tatid\OneDrive\Desktop\Msd\logosq.jpg" type="image/x-icon">
-    <title>Vegetables</title>
-    <link rel="stylesheet" href="vegetables.css">
+    <title>Farm Basket</title>
+    <link rel="shortcut icon" href="fb2.png" type="image/x-icon">
+    <link rel="stylesheet" href="index.css">
+    <style>
+        body {
+            background-color: #a4d3a4;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            color: #333;
+        }
+        .hero h1 {
+            color: black; 
+        }
+        .category a {
+            text-decoration: none;
+            color: inherit;
+            display: block;
+        }
+        .category a:hover {
+            text-decoration: underline;
+        }
+    </style>
 </head>
 <body>
-    <header>
+  
+    <header style="position: relative">
+        <button id="pfl" onclick="profile()"><img src="user.png" alt="profile"></button>
+        <ul class="profDropDown">
+            <li><a href="acc.html">Account</a></li>
+            <li>My Orders</li>
+            <li>Logout</li>
+        </ul>
         <div class="logo"><b><i>Farm Basket</i></b></div>
        <div class="fix"> <nav>
-            <a href="index.html">Home</a>
+            <a href="#home">Home</a>
             <a href="cart.html">Cart</a>
-
+            <a href="#orders.html">My Orders</a>
+            <a href="#about">About Us</a>
+            <a href="#contact">Contact Us</a>
+           <a href="log.html"> <button>Login/Sign up</button></a>
         </nav></div>
     </header>
-    <div id="veggiesContainer">
-        
-    </div>
+
+ 
+    <section class="hero">
+        <h2>Fresh from the Farm to Your Home</h2>
+        <div class="search-bar">
+            <input type="text" placeholder="Search for farm products...">
+        </div>
+        <button>Shop Now</button>
+    </section>
+
+
+    <section class="categories">
+        <div class="category">
+            <a href="vegetables.html">
+                <img src="https://watermark.lovepik.com/photo/20211208/large/lovepik-fruits-and-vegetables-poster-picture_501615020.jpg" alt="Vegetables">
+                <h3>Vegetables</h3>
+            </a>
+        </div>
+        <div class="category">
+            <a href="fruit.html">
+                <img src="https://wallpapers.com/images/hd/full-4k-assorted-fruits-gbkgp9whmy8kpm0s.jpg" alt="Fruits">
+                <h3>Fruits</h3>
+            </a>
+        </div>
+        <div class="category">
+            <a href="dairy.html">
+                <img src="https://img.lovepik.com/bg/20231216/Background-of-Milk-and-Eggs-Displayed-on-a-Table_2485671_wh300.png" alt="Dairy/Eggs">
+                <h3>Dairy/Eggs</h3>
+            </a>
+        </div>
+        <div class="category">
+            <a href="nus.html">
+                <img src="https://img.freepik.com/premium-photo/dried-fruits-nuts-mix-wooden-bowl_154293-5114.jpg?semt=ais_hybrid" alt="Nuts">
+                <h3>Nuts</h3>
+            </a>
+        </div>
+    </section>
+
     <footer class="footer">
         <nav>
             <h4 id="about">About Us</h4>
@@ -45,5 +110,4 @@
         <p class="end">&copy; 2025 Farm Basket. All rights reserved.</p>
     </footer>
 </body>
-<script src="script.js"></script>
 </html>
