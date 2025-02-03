@@ -1,6 +1,6 @@
 let cartItems = []
 
-const veggies = [
+veggies = [
     {imageUrl: 'https://images6.alphacoders.com/337/thumb-1920-337993.jpg', rating: '4.5', name: 'Carrot', price: '50' },
     {imageUrl: 'https://t4.ftcdn.net/jpg/03/54/24/17/360_F_354241708_IrEvwS6AeMei4ZZJHTSOC1xqtl79rS10.jpg', rating: '4.7', name: 'Tomato', price: '25' },
     {imageUrl: 'https://samsgardenstore.com/cdn/shop/files/EggShapeSambarCucumberSeeds_Desi_Dosakaya.webp?v=1726217496', rating: '4.5', name: 'Dosakai', price: '30' },
@@ -45,7 +45,8 @@ const addItem = (imageUrl, rating, price, name) => {
 }
 
 cartContainer = document.getElementById('cartContainer')
-cartItems = JSON.parse(localStorage.getItem('cartItems'))
+const newCartItems = JSON.parse(localStorage.getItem('cartItems'))
+if(newCartItems !== null){cartItems = newCartItems}
 if(cartContainer !== null){
     cartContainer.innerHTML = cartItems.map((item, index) => {
         return `
@@ -53,7 +54,7 @@ if(cartContainer !== null){
               <img src="${item.imageUrl}" alt=${item.name}">
               <div class="item-info">
                   <p>${item.name}</p>
-                  <span style="display: flex; gap: 5px"><p>Price: </p><p id='${index}-price'>${item.price}</p></span>
+                  <span style="display: flex; gap: 5px"><p>Price: </p><p id='${index}-price'>${parseInt(item.price) * parseInt(item.quantity)}</p></span>
               </div>
               <div class="quantity">
                   <button onclick="updateQuantity('-', '${index}', '${item.price}')">-</button>
@@ -67,36 +68,25 @@ if(cartContainer !== null){
 
 const updateQuantity= (sign, id, amount) => {
   quantity = document.getElementById(`${id}-quan`)
-  sign === '-' ? quantity.innerText = parseInt(quantity.innerText)-1 
+  sign === '-' ? quantity.innerText = parseInt(quantity.innerText)-1 < 0 ? 0 : parseInt(quantity.innerText) -1
   : quantity.innerText = parseInt(quantity.innerText)+1
   if(parseInt(quantity.innerText) === 0){
     cartItems.splice(id, 1)
     localStorage.setItem('cartItems', JSON.stringify(cartItems))
-    updateTotal()
     window.location.reload()
     alert('item removed')
     return
   }
-  localStorage.setItem('cartItems', JSON.stringify(cartItems))
-      window.location.reload()
   price = document.getElementById(`${id}-price`)
   price.innerText = parseInt(parseInt(amount)*parseInt(quantity.innerText))
-  cartItems[id].price = price.innerText
-  updateTotal()
+  cartItems[id].quantity = quantity.innerText
+  localStorage.setItem('cartItems', JSON.stringify(cartItems))
+  window.location.reload()
 }
 
 const total = document.getElementById('total')
 let net = 0
 cartItems.map((item) => {
-  net += parseInt(item.price)
+  net += (parseInt(item.price)* parseInt(item.quantity))
 })
 total.innerText = net
-
-const updateTotal = () => {
-    const total = document.getElementById('total')
-    let net = 0
-    cartItems.map((item) => {
-      net += parseInt(item.price)
-    })
-    total.innerText = net
-}

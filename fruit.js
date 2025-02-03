@@ -39,11 +39,13 @@ const addItem = (imageUrl, rating, price, name) => {
   cartItems.push(item)
   alert('Item added successfully')
   localStorage.setItem('cartItems', JSON.stringify(cartItems))
-  console.log(cartItems)
+  // console.log(cartItems)
 }
 
 cartContainer = document.getElementById('cartContainer')
-cartItems = JSON.parse(localStorage.getItem('cartItems'))
+const newCartItems = JSON.parse(localStorage.getItem('cartItems'))
+if(newCartItems !== null){cartItems = newCartItems}
+
 if(cartContainer !== null){
     cartContainer.innerHTML = cartItems.map((item, index) => {
         return `
@@ -70,31 +72,20 @@ const updateQuantity= (sign, id, amount) => {
   if(parseInt(quantity.innerText) === 0){
     cartItems.splice(id, 1)
     localStorage.setItem('cartItems', JSON.stringify(cartItems))
-    updateTotal()
     window.location.reload()
     alert('item removed')
     return
   }
-  localStorage.setItem('cartItems', JSON.stringify(cartItems))
-  window.location.reload()
   price = document.getElementById(`${id}-price`)
   price.innerText = parseInt(parseInt(amount)*parseInt(quantity.innerText))
-  cartItems[id].price = price.innerText
-  updateTotal()
+  cartItems[id].quantity = quantity.innerText
+  localStorage.setItem('cartItems', JSON.stringify(cartItems))
+  window.location.reload()
 }
 
 const total = document.getElementById('total')
 let net = 0
 cartItems.map((item) => {
-  net += parseInt(item.price)
+  net += (parseInt(item.price)* parseInt(item.quantity))
 })
 total.innerText = net
-
-const updateTotal = () => {
-    const total = document.getElementById('total')
-    let net = 0
-    cartItems.map((item) => {
-      net += parseInt(item.price)
-    })
-    total.innerText = net
-}
