@@ -2,14 +2,14 @@ let cartItems = []
 
 veggies = [
 
-    {imageUrl: 'https://i0.wp.com/www.freshelaexporters.com/wp-content/uploads/2024/01/raw-cashews-nuts-bag-dark-background-scaled.jpg?fit=1024%2C683&ssl=1', rating: '4.8', name: 'Cashews', price: '700' },
-    {imageUrl: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSqR9flxk0YUJMnIPxqNgBMUBIpqUuVCHIoAQ&s', rating: '4.8', name: 'Almonds', price: '650' },
-    {imageUrl: 'https://img.freepik.com/free-photo/golden-raisins_2829-9427.jpg', rating: '4.8', name: 'Raisins', price: '400' },
-    {imageUrl: 'https://media.istockphoto.com/id/1318595716/photo/roasted-and-salted-pistachio-seeds-with-shell-background-from-above.jpg?s=612x612&w=0&k=20&c=k-MCcYabWoUSXEwBSmK8xfYkdyWcFXC-Txqt-hXHdaE=', rating: '4.8', name: 'Pistachio', price: '1000' },
-    {imageUrl: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRzdUEx2MF11xPkMd75CWMN26Hp3x_kMJlrow&s', rating: '4.8', name: 'Wal nuts', price: '1000' },
-    {imageUrl: 'https://t4.ftcdn.net/jpg/01/40/37/39/360_F_140373924_z9PdAIZ1AjoTlHMOfkQ4WwrPR3BS5BIv.jpg', rating: '4.8', name: 'Dates', price: '350' },
-    {imageUrl: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTnPINOFX9K_X-nL-N56T31pRWMltOWEN-ymg&s', rating: '4.8', name: 'Anjeer', price: '500' },
-    {imageUrl: 'https://media.istockphoto.com/id/1175603836/photo/pumpkin-seeds.jpg?s=612x612&w=0&k=20&c=0PQCwKjIyjfDa-rtSy-szBGHB6wNuAUrHeNA-trEVp4=', rating: '4.8', name: 'Pumpkin Seed', price: '400' },
+    {imageUrl: 'cashew.webp', rating: '4.8', name: 'Cashews', price: '700' },
+    {imageUrl: 'badam.jpg', rating: '4.8', name: 'Almonds', price: '650' },
+    {imageUrl: 'raisins.avif', rating: '4.8', name: 'Raisins', price: '400' },
+    {imageUrl: 'pista.jpg', rating: '4.8', name: 'Pistachio', price: '1000' },
+    {imageUrl: 'walnut.jpg', rating: '4.8', name: 'Wal nuts', price: '1000' },
+    {imageUrl: 'dates.jpg', rating: '4.8', name: 'Dates', price: '350' },
+    {imageUrl: 'anjeer.jpg', rating: '4.8', name: 'Anjeer', price: '500' },
+    {imageUrl: 'pumpkin-seeds.jpg', rating: '4.8', name: 'Pumpkin Seed', price: '400' },
     
 ]
 

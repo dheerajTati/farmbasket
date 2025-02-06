@@ -1,10 +1,10 @@
 let cartItems = []
 
 veggies = [
-    {imageUrl: 'https://static.toiimg.com/photo/65966801.cms', rating: '4.5', name: 'Buffalo Milk', price: '80/ltr' },
-    {imageUrl: 'https://tamilmilk.com/cdn/shop/files/freshmilk_4c782fa0-0ba2-4eab-81c3-21707b7b9819.jpg?v=1724966928&width=1024', rating: '4.7', name: 'Cow Milk', price: '65/ltr' },
-    {imageUrl: 'https://foodallergycanada.ca/wp-content/uploads/egg-2.jpg', rating: '4.5', name: 'Eggs', price: '5/peace' },
-    {imageUrl: 'https://pheebs.in/shop-admin/images/products/JIR4Em8kHpXtv2d6Fs.jpg', rating: '4.8', name: 'Country Eggs', price: '10/peace' },
+    {imageUrl: 'milk.cms', rating: '4.5', name: 'Buffalo Milk', price: '80/ltr' },
+    {imageUrl: 'cow-milk.webp', rating: '4.7', name: 'Cow Milk', price: '65/ltr' },
+    {imageUrl: 'egg.jpg', rating: '4.5', name: 'Eggs', price: '5/peace' },
+    {imageUrl: 'c-egg.jpg', rating: '4.8', name: 'Country Eggs', price: '10/peace' },
 
     
 ]

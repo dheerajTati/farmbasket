@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment page</title>
+    <link rel="stylesheet" href="pay.css">
+</head>
+<body>
+    <button class="back" onclick="window.history.back();">back</button>
+    <div class="head"><h1>Payment</h1></div>
+    <div class="main">
+        <div class="input">
+            <h2><li>Deliver to this address:</li></h2>
+            <input class="box" type="text" name="add" placeholder="Adress.....">
+        </div>
+        <div>
+            <h2><li>Payment Options</li></h2>
+            <form>
+                <label class="tick">
+                    <input type="radio" name="phonepe">PhonePe <br><br>
+                    <input type="radio" name="gpay">GPay <br><br>
+                    <input type="radio" name="paytm">Paytm <br><br>
+                    <input type="radio" name="cod">Cash on Delivery(COD)
+                </label>                
+            </form>
+        </div>
+        <button type="submit">Confirm Payment</button>
+    </div>
+</body>
+</html>
