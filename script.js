@@ -1,22 +1,22 @@
 let cartItems = []
 
 veggies = [
-    {imageUrl: 'carrot.jpg', rating: '4.5', name: 'Carrot', price: '50/kg' },
-    {imageUrl: 'tomato.jpg', rating: '4.7', name: 'Tomato', price: '25/kg' },
-    {imageUrl: 'dosakaya.webp', rating: '4.5', name: 'Dosakai', price: '30/kg' },
-    {imageUrl: 'cucumber.webp', rating: '4.8', name: 'Cucumber', price: '40/kg' },
-    {imageUrl: 'bell-pepper.webp', rating: '4.6', name: 'Capsicum', price: '60/kg' },
-    {imageUrl: 'onion.jpg', rating: '4.7', name: 'Onion', price: '30/kg' },
-    {imageUrl: 'garlic.jpg', rating: '4.4', name: 'Garlic', price: '110/kg' },
-    {imageUrl: 'potato.jpg', rating: '4.9', name: 'Potato', price: '35/kg' },
-    {imageUrl: 'spinach.jpg', rating: '4.5', name: 'Spinach', price: '10/pack' },
-    {imageUrl: 'pumpkin.jpg', rating: '4.5', name: 'Pumpkin', price: '40/kg' },
-    {imageUrl: 'cauliflower.jpg', rating: '4.6', name: 'Cauliflower', price: '25/kg' },
-    {imageUrl: 'peas.jpg', rating: '4.5', name: 'Peas', price: '15/pack' },
-    {imageUrl: 'ladyfinger.jpg', rating: '4.5', name: 'Lady Finger', price: '30/kg' },
-    {imageUrl: 'brinjal.webp', rating: '4.5', name: 'Brinjal', price: '24/kg' },
-    {imageUrl: 'cabbage.jpg', rating: '4.8', name: 'Cabbage', price: '30/kg' },
-    {imageUrl: 'chikkidi.jpg', rating: '4.3', name: 'Chikkudai', price: '40/kg' },
+    {imageUrl: 'carrot.jpg', rating: '4.5', name: 'Carrot', price: '50.00/kg' },
+    {imageUrl: 'tomato.jpg', rating: '4.7', name: 'Tomato', price: '25.00/kg' },
+    {imageUrl: 'dosakaya.webp', rating: '4.5', name: 'Dosakai', price: '30.00/kg' },
+    {imageUrl: 'cucumber.webp', rating: '4.8', name: 'Cucumber', price: '40.00/kg' },
+    {imageUrl: 'bell-pepper.webp', rating: '4.6', name: 'Capsicum', price: '60.00/kg' },
+    {imageUrl: 'onion.jpg', rating: '4.7', name: 'Onion', price: '30.00/kg' },
+    {imageUrl: 'garlic.jpg', rating: '4.4', name: 'Garlic', price: '110.00/kg' },
+    {imageUrl: 'potato.jpg', rating: '4.9', name: 'Potato', price: '35.00/kg' },
+    {imageUrl: 'spinach.jpg', rating: '4.5', name: 'Spinach', price: '10.00/pack' },
+    {imageUrl: 'pumpkin.jpg', rating: '4.5', name: 'Pumpkin', price: '40.00/kg' },
+    {imageUrl: 'cauliflower.jpg', rating: '4.6', name: 'Cauliflower', price: '25.00/kg' },
+    {imageUrl: 'peas.jpg', rating: '4.5', name: 'Peas', price: '15.00/pack' },
+    {imageUrl: 'ladyfinger.jpg', rating: '4.5', name: 'Lady Finger', price: '30.00/kg' },
+    {imageUrl: 'brinjal.webp', rating: '4.5', name: 'Brinjal', price: '24.00/kg' },
+    {imageUrl: 'cabbage.jpg', rating: '4.8', name: 'Cabbage', price: '30.00/kg' },
+    {imageUrl: 'chikkidi.jpg', rating: '4.3', name: 'Chikkudai', price: '40.00/kg' },
     
 ]
 
@@ -28,7 +28,7 @@ if (veggiesContainer!== null)
       <div class="block">
         <img src="${veggie.imageUrl}" alt="${veggie.name}"/>
         <div class="rating">⭐ ${veggie.rating}</div>
-        <div class="price">₹${veggie.price}.00</div>
+        <div class="price">₹${veggie.price}</div>
         <b>${veggie.name}</b>
         <button class="cart-btn" onclick="addItem('${veggie.imageUrl}', '${veggie.rating}', '${veggie.price}', '${veggie.name}')">Add to Cart</button>
       </div>
